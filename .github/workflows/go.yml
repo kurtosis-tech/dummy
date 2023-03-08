@@ -9,7 +9,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: get-version
-        run: export CURRENT_VERSION="$(cat version.txt)"
+        run: echo "CURRENT_VERSION=$(cat version.txt)" >> $GITHUB_ENV
       - name: tag-golang-package
         uses: pkgdeps/git-tag-action@v2
         with:
